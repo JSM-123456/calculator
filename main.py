@@ -1,11 +1,11 @@
 import sys # 시스템 제어 관련 모듈
 
 # 위젯이란? GUI 프로그램에서 구성요소를 뜻하는 용어
-from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QVBoxLayout, QMessageBox, QPlainTextEdit, QHBoxLayout) # QMessageBox : 메시지박스 위젯
-from PyQt5.QtGui import QIcon                                                              # Icon을 추가하기 위한 라이브러리
-
+from ui import View # QMessageBox : 메시지박스 위젯
+from ctrl import Control                                                              # Icon을 추가하기 위한 라이브러리
+from PyQt5.QtWidgets import QApplication
 # 나는 계산기 유형을 직접 정의한다! 이때 Qwidget에 기반을 둔다
-class Calculator(QWidget) :
+'''class Calculator(QWidget) :
 
     def __init__(self) :
         super().__init__()                                                                 # 뭔가에 기반을 둘 경우 써줘야 하는 코드
@@ -56,4 +56,13 @@ class Calculator(QWidget) :
 if __name__ == '__main__' :
     app = QApplication(sys.argv)      # Qt 프로그램 실행코드
     view = Calculator()               # 내가 만든 계산기 GUI 생성코드
-    sys.exit(app.exec_())             # 계산기 종료 시 시스템 종료 명령
+    sys.exit(app.exec_())             # 계산기 종료 시 시스템 종료 명령'''
+def main() :
+    calc = QApplication(sys.argv)
+    app = QApplication(sys.argv)
+    view = View()
+    Control(view = view)
+    sys.exit(app.exec_())
+
+if __name__ == '__main__' :
+    main()
